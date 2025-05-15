@@ -1,26 +1,58 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
-const NotFound = () => {
-  const location = useLocation();
+import React from "react";
+import {
+  Frame,
+  TitleBar,
+  Window,
+  Button,
+  ThemeProvider
+} from "@react95/core";
+import styled from "styled-components";
 
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
+const NotFoundContainer = styled(Frame)`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "ms_sans_serif";
+`;
+
+const ErrorWindow = styled(Window)`
+  width: 400px;
+`;
+
+const WindowContent = styled.div`
+  padding: 20px;
+  text-align: center;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+const NotFound: React.FC = () => {
+  const handleGoHome = () => {
+    window.location.href = "/";
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
-    </div>
+    <ThemeProvider>
+      <NotFoundContainer variant="outside">
+        <ErrorWindow>
+          <TitleBar active title="Error" />
+          <WindowContent>
+            <h2>404 - Page Not Found</h2>
+            <p>The page you are looking for does not exist.</p>
+            <ButtonWrapper>
+              <Button onClick={handleGoHome}>OK</Button>
+            </ButtonWrapper>
+          </WindowContent>
+        </ErrorWindow>
+      </NotFoundContainer>
+    </ThemeProvider>
   );
 };
 
