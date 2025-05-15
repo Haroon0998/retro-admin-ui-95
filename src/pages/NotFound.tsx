@@ -41,8 +41,7 @@ const NotFound: React.FC = () => {
   return (
     <ThemeProvider>
       <NotFoundContainer variant="outside">
-        <ErrorWindow>
-          <TitleBar active title="Error" />
+        <ErrorWindow closeModal={() => {}} title="Error">
           <WindowContent>
             <h2>404 - Page Not Found</h2>
             <p>The page you are looking for does not exist.</p>
