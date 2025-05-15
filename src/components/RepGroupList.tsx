@@ -41,7 +41,7 @@ const RepGroupList: React.FC = () => {
 
   return (
     <LeftPanel>
-      <Fieldset label="RepGpID - RepGpName">
+      <Fieldset legend="RepGpID - RepGpName">
         <List
           height={230}
           width={250}
@@ -50,7 +50,7 @@ const RepGroupList: React.FC = () => {
         />
       </Fieldset>
 
-      <Fieldset label="Filter">
+      <Fieldset legend="Filter">
         <Row>
           <CheckboxContainer>
             <Checkbox label="Active" />

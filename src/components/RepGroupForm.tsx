@@ -110,7 +110,7 @@ const RepGroupForm: React.FC = () => {
         <Button>Folder</Button>
       </Row>
 
-      <Fieldset label="Quarterly Payout" style={{ marginTop: "10px" }}>
+      <Fieldset legend="Quarterly Payout" style={{ marginTop: "10px" }}>
         <FormField>
           <Label>W9 Name</Label>
           <Input />
@@ -124,14 +124,14 @@ const RepGroupForm: React.FC = () => {
         </Row>
       </Fieldset>
 
-      <Fieldset label="Email Addresses (Un-Check to Deactivate)">
+      <Fieldset legend="Email Addresses (Un-Check to Deactivate)">
         <TextArea height={100} />
         <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "5px" }}>
           <Button>Add New</Button>
         </div>
       </Fieldset>
 
-      <Fieldset label="Notes">
+      <Fieldset legend="Notes">
         <TextArea height={80} />
       </Fieldset>
     </RightPanel>

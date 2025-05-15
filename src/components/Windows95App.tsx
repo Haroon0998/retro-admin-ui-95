@@ -78,7 +78,7 @@ const Windows95App: React.FC = () => {
         <TabArea>
           <Tabs defaultActiveTab="Rep Groups">
             {tabs.map((label) => (
-              <Tab key={label} value={label}>
+              <Tab key={label}>
                 {label}
               </Tab>
             ))}
