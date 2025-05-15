@@ -11,6 +11,7 @@ import {
   Tab,
   TextArea,
   TitleBar,
+  ThemeProvider,
 } from "@react95/core";
 import styled from "styled-components";
 import RepGroupList from "./RepGroupList";
@@ -63,34 +64,36 @@ const Windows95App: React.FC = () => {
   ];
 
   return (
-    <AppContainer variant="outside">
-      <TitleBar active title="Maintenance - ON TEST SERVER !!!" />
+    <ThemeProvider>
+      <AppContainer variant="outside">
+        <TitleBar active title="Maintenance - ON TEST SERVER !!!" />
 
-      <ContentContainer>
-        <Toolbar>
-          <Button primary>Add New</Button>
-          <Button>Update</Button>
-          <Button>Folder</Button>
-          <Button>Scan</Button>
-          <Button>Show Log Window</Button>
-        </Toolbar>
+        <ContentContainer>
+          <Toolbar>
+            <Button primary>Add New</Button>
+            <Button>Update</Button>
+            <Button>Folder</Button>
+            <Button>Scan</Button>
+            <Button>Show Log Window</Button>
+          </Toolbar>
 
-        <TabArea>
-          <Tabs defaultActiveTab="Rep Groups">
-            {tabs.map((label) => (
-              <Tab key={label}>
-                {label}
-              </Tab>
-            ))}
-          </Tabs>
-        </TabArea>
+          <TabArea>
+            <Tabs defaultActiveTab="Rep Groups">
+              {tabs.map((label) => (
+                <Tab title={label} key={label}>
+                  {label}
+                </Tab>
+              ))}
+            </Tabs>
+          </TabArea>
 
-        <Content>
-          <RepGroupList />
-          <RepGroupForm />
-        </Content>
-      </ContentContainer>
-    </AppContainer>
+          <Content>
+            <RepGroupList />
+            <RepGroupForm />
+          </Content>
+        </ContentContainer>
+      </AppContainer>
+    </ThemeProvider>
   );
 };
 
