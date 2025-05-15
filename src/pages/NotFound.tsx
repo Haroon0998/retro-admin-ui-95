@@ -3,7 +3,7 @@ import React from "react";
 import {
   Frame,
   TitleBar,
-  Window,
+  Modal,
   Button,
   ThemeProvider
 } from "@react95/core";
@@ -18,7 +18,7 @@ const NotFoundContainer = styled(Frame)`
   font-family: "ms_sans_serif";
 `;
 
-const ErrorWindow = styled(Window)`
+const ErrorWindow = styled(Modal)`
   width: 400px;
 `;
 
